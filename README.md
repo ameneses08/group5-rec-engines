@@ -80,6 +80,7 @@ After this cell finishes, go to **Runtime → Restart runtime**. This is require
 After the runtime restarts, run this in a new cell:
 
 ```python
+# Navigate back to the repo — required after every runtime restart
 %cd /content/group5-rec-engines
 
 from google.colab import drive
@@ -94,7 +95,13 @@ print("Data files copied successfully!")
 
 **Step 3: Run a notebook**
 
-In the same Colab notebook, run any of the project notebooks with:
+If you restarted the runtime since Step 2, navigate back first:
+
+```python
+%cd /content/group5-rec-engines
+```
+
+Then run any of the project notebooks with:
 
 ```python
 %run notebooks/01_non_personalized.ipynb
