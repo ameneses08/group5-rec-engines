@@ -7,7 +7,6 @@ IE University · Recommendation Engines · Prof. Ignacio de Córdoba · 2025–2
 - Julián Consuegra
 - Juan Pablo Miró-Quesada
 - Tomás Roschge
-- [Name 5]
 
 ## Project description
 
