@@ -93,22 +93,22 @@ shutil.copy('/content/drive/MyDrive/Group_Rec_Engines_Project/amazon_meta_filter
 print("Data files copied successfully!")
 ```
 
-**Step 3: Run a notebook**
+**Step 3: Run the notebooks**
 
-If you restarted the runtime since Step 2, navigate back first:
+After the runtime restart, first re-enter the repo directory:
 
 ```python
 %cd /content/group5-rec-engines
 ```
 
-Then run any of the project notebooks with:
+Then run each notebook with:
 
 ```python
-%run notebooks/01_non_personalized.ipynb
-%run notebooks/02_collaborative_filtering.ipynb
-%run notebooks/03_content_based.ipynb
-%run notebooks/04_context_aware.ipynb
-%run notebooks/05_evaluation.ipynb
+!jupyter nbconvert --to notebook --execute --inplace notebooks/01_non_personalized.ipynb
+!jupyter nbconvert --to notebook --execute --inplace notebooks/02_collaborative_filtering.ipynb
+!jupyter nbconvert --to notebook --execute --inplace notebooks/03_content_based.ipynb
+!jupyter nbconvert --to notebook --execute --inplace notebooks/04_context_aware.ipynb
+!jupyter nbconvert --to notebook --execute --inplace notebooks/05_evaluation.ipynb
 ```
 
 Run them in order (01 → 05) the first time, since notebook 05 loads saved results from notebooks 01–04.
