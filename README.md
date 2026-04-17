@@ -60,6 +60,54 @@ mkdir data
 # Professor/grader: the files are included in the submission zip
 ```
 
+## Running on Google Colab
+
+**Step 1: Setup (run once in a new Colab notebook)**
+
+```python
+# Clone the repo
+!git clone https://github.com/ameneses08/group5-rec-engines.git
+%cd group5-rec-engines
+
+# Install dependencies (will downgrade numpy — this is expected)
+!pip install -q -r requirements.txt
+```
+
+After this cell finishes, go to **Runtime → Restart runtime**. This is required because scikit-surprise needs numpy<2.
+
+**Step 2: Load data from Google Drive**
+
+After the runtime restarts, run this in a new cell:
+
+```python
+%cd /content/group5-rec-engines
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+import shutil, os
+os.makedirs('data', exist_ok=True)
+shutil.copy('/content/drive/MyDrive/Group_Rec_Engines_Project/amazon_electronics_filtered.csv', 'data/')
+shutil.copy('/content/drive/MyDrive/Group_Rec_Engines_Project/amazon_meta_filtered.csv', 'data/')
+print("Data files copied successfully!")
+```
+
+**Step 3: Run a notebook**
+
+In the same Colab notebook, run any of the project notebooks with:
+
+```python
+%run notebooks/01_non_personalized.ipynb
+%run notebooks/02_collaborative_filtering.ipynb
+%run notebooks/03_content_based.ipynb
+%run notebooks/04_context_aware.ipynb
+%run notebooks/05_evaluation.ipynb
+```
+
+Run them in order (01 → 05) the first time, since notebook 05 loads saved results from notebooks 01–04.
+
+**Note:** Each notebook can also be run independently — they all load data fresh. But notebook 05 requires the `.pkl` result files that notebooks 01–04 save to `results/`.
+
 ## Repo structure
 
 ```
