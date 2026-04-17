@@ -3,10 +3,10 @@
 IE University · Recommendation Engines · Prof. Ignacio de Córdoba · 2025–26
 
 ## Team members
-- [Name 1]
-- [Name 2]
-- [Name 3]
-- [Name 4]
+- Antonio Meneses
+- Julián Consuegra
+- Juan Pablo Miró-Quesada
+- Tomás Roschge
 - [Name 5]
 
 ## Project description
