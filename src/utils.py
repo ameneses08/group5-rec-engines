@@ -24,14 +24,21 @@ def load_data(data_dir=None):
     if data_dir is None:
         data_dir = Path(__file__).resolve().parent.parent / 'data'
     data_dir = Path(data_dir)
-    df = pd.read_csv(
-        data_dir / 'amazon_electronics_filtered.csv',
-        dtype={'user_id': str, 'item_id': str}
-    )
-    df_meta = pd.read_csv(
-        data_dir / 'amazon_meta_filtered.csv',
-        dtype={'asin': str}
-    )
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    reviews_path = data_dir / 'amazon_electronics_filtered.csv'
+    meta_path    = data_dir / 'amazon_meta_filtered.csv'
+    missing = [p.name for p in (reviews_path, meta_path) if not p.exists()]
+    if missing:
+        raise FileNotFoundError(
+            "Missing data files. Place amazon_electronics_filtered.csv and "
+            "amazon_meta_filtered.csv in the data/ folder. "
+            "Team members: download from the shared Google Drive (Group_Rec_Engines_Project). "
+            "Professor: the files are included in the submission zip."
+        )
+
+    df = pd.read_csv(reviews_path, dtype={'user_id': str, 'item_id': str})
+    df_meta = pd.read_csv(meta_path, dtype={'asin': str})
     return df, df_meta
 
 

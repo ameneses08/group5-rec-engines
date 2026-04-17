@@ -32,13 +32,15 @@ including prediction accuracy, ranking quality, beyond-accuracy metrics, and A/B
 | Sparsity | 99.9943% |
 | Temporal split (80/20) | Train: 1,687,895 · Test: 421,974 |
 
-The CSV files are **not** included in the repository (too large). Download instructions below.
+The CSV files are **not** included in the repository (too large for git).
 
 ## Setup
 
+> **Do steps 1–4 before running any notebook.**
+
 ```bash
 # 1. Clone the repo
-git clone <repo-url>
+git clone https://github.com/ameneses08/group5-rec-engines.git
 cd group5-rec-engines
 
 # 2. Create a virtual environment
@@ -48,9 +50,14 @@ source .venv/bin/activate   # Windows: .venv\Scripts\activate
 # 3. Install dependencies (numpy<2 required for scikit-surprise)
 pip install -r requirements.txt
 
-# 4. Place data files in data/
-#    amazon_electronics_filtered.csv
-#    amazon_meta_filtered.csv
+# 4. Add the data files  ← required before running any notebook
+mkdir data
+# Then place both CSV files in data/:
+#   data/amazon_electronics_filtered.csv
+#   data/amazon_meta_filtered.csv
+#
+# Team members:   download from the shared Google Drive (Group_Rec_Engines_Project)
+# Professor/grader: the files are included in the submission zip
 ```
 
 ## Repo structure
