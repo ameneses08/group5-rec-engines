@@ -133,7 +133,6 @@ group5-rec-engines/
 │   ├── 04_context_aware.ipynb
 │   └── 05_evaluation.ipynb
 ├── results/                       (pkl files produced by notebooks 01–04)
-└── Group_Assignment_Reccomendation_Engines_v2.ipynb  (original monolithic notebook)
 ```
 
 ## How to reproduce
